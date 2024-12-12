@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section with Shop Banner -->
+<section class="hero">
+    <div class="hero-content">
+        <!-- Content here -->
+    </div>
+    <div class="banner">
+        <img src="shop logo.jpg" alt="Shop Banner">
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Us</h2>
+    <div class="about-container">
+        <div class="about-text">
+            <p>We are a leading mobile shop offering a variety of smartphones, accessories, and repair services. With years of experience in the industry, we are committed to providing the best quality products and services to our customers.</p>
+            <ul>
+                <li>High-quality mobile phones from top brands.</li>
+                <li>Quick and reliable mobile repairs by certified technicians.</li>
+                <li>Wide range of accessories including cases, screen protectors, chargers, and more.</li>
+                <li>Exceptional customer service and support.</li>
+                <li>Convenient location with easy access to parking.</li>
+                <li>Affordable prices with regular promotions and discounts.</li>
+                <li>Fast and secure delivery options available.</li>
+            </ul>
+        </div>
+        <div class="about-img">
+            <img src="about us.jpeg" alt="Mobile Shop Image">
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+        <div class="service" style="background-image: url('smart phones.png');">
+            <h3>Smartphone Sales</h3>
+            <p>Get the latest mobile phones from all major brands.</p>
+        </div>
+        <div class="service" style="background-image: url('repair img.png');">
+            <h3>Repairs</h3>
+            <p>We offer quick and reliable repairs for all mobile devices.</p>
+        </div>
+        <div class="service" style="background-image: url('accessories.jpg');">
+            <h3>Accessories</h3>
+            <p>Shop for mobile accessories including cases, chargers, and more.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-container">
+        <div class="testimonial">
+            <p>"The best mobile shop I've ever visited! Great customer service and fast repairs."</p>
+            <h4>- Arun kumar</h4>
+        </div>
+        <div class="testimonial">
+            <p>"A wide variety of smartphones at great prices. Highly recommend!"</p>
+            <h4>- Selvaraj</h4>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="#" method="POST">
+        <input type="text" id="user-name" placeholder="Your Name" required>
+        <input type="email" id="user-email" placeholder="Your Email" required>
+        <input type="tel" id="user-phone" placeholder="Your Phone Number" required>
+        <textarea id="user-message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Mr Tamizha Mobiles | All Rights Reserved</p>
+</footer>
+
+<script type="text/javascript">
+  emailjs.init("Karthi B");  // Replace "YOUR_USER_ID" with your actual EmailJS user ID
+
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("user-name").value;
+    const email = document.getElementById("user-email").value;
+    const phone = document.getElementById("user-phone").value;
+    const message = document.getElementById("user-message").value;
+
+    const templateParams = {
+      name: name,
+      email: email,
+      phone: phone,
+      message: message
+    };
+
+    emailjs.send("service_kytt0cn", "template_4ods2fd", templateParams)
+      .then(function(response) {
+        alert("Your message has been sent!");
+        document.getElementById("contact-form").reset();
+      }, function(error) {
+        alert("Failed to send your message. Please try again.");
+      });
+  });
+</script>
+
+</body>
+</html>
